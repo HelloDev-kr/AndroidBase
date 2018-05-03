@@ -1,0 +1,18 @@
+def getCommitsCount() {
+    return "git --git-dir=${projectDir}/../.git --work-tree=${projectDir}/.. rev-list --count HEAD".execute().text.toInteger()
+}
+
+ext.preprocessVersionBuild = getCommitsCount()
+ext.preprocessVersionMajor = rootProject.ext.versioning.versionMajor
+ext.preprocessVersionMinor = rootProject.ext.versioning.versionMinor
+ext.preprocessVersionName = ("${preprocessVersionMajor}.${preprocessVersionMinor}.${preprocessVersionBuild}")
+ext.preprocessVersionCode = ((((preprocessVersionMajor * 100) + preprocessVersionMinor) * 100) * 100000 + preprocessVersionBuild)
+
+android {
+    defaultConfig {
+        versionCode preprocessVersionCode
+        versionName preprocessVersionName
+    }
+}
+
+rootProject.ext.bintray.libraryVersion = preprocessVersionName

@@ -1,0 +1,43 @@
+ext {
+    java = [
+            sourceCompatibility: JavaVersion.VERSION_1_8,
+            targetCompatibility: JavaVersion.VERSION_1_8
+    ]
+
+    android = [
+            compileSdkVersion: 27,
+            buildToolsVersion: '27.0.3',
+            minSdkVersion    : 21,
+            targetSdkVersion : 27
+    ]
+
+    versioning = [
+            versionMajor: 0,
+            versionMinor: 0
+    ]
+
+    maven = [
+            groupId       : 'kr.hellodev.support',
+            artifactId    : "android-base",
+            license       : 'MIT',
+            licenseUrl    : 'https://mit-license.org',
+            developerId   : 'hellodev-kr',
+            developerName : 'Cura',
+            developerEmail: 'cura@hellodev.kr'
+    ]
+
+    bintray = [
+            repo    : maven.groupId,
+            name    : maven.artifactId,
+            vcsUrl  : 'https://github.com/HelloDev-kr/AndroidBase.git',
+            licenses: ['MIT']
+    ]
+
+    dependencies = [
+            'org.jetbrains.kotlin:kotlin-stdlib-jre7'        : 'org.jetbrains.kotlin:kotlin-stdlib-jre7:1.2.30',
+            'com.android.support:appcompat-v7'               : 'com.android.support:appcompat-v7:27.1.1',
+            'junit:junit'                                    : 'junit:junit:4.12',
+            'com.android.support.test:runner'                : 'com.android.support.test:runner:1.0.1',
+            'com.android.support.test.espresso:espresso-core': 'com.android.support.test.espresso:espresso-core:3.0.1'
+    ]
+}
