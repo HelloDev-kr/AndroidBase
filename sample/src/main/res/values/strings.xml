@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Sample</string>
+
+    <string name="test_long_text">abcdefghijklmnopqrstuvwxyz</string>
+</resources>

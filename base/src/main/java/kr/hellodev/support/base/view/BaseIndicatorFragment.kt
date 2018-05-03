@@ -11,22 +11,22 @@ import kr.hellodev.support.base.indicator.BaseView
  * @date 2018.05.03
  * @author Cura
  */
-abstract class BaseIndicatorFragment<in VIEW : BaseView, INSPECTOR : BaseIndicator<VIEW>> : BaseFragment(), BaseView {
+abstract class BaseIndicatorFragment<in VIEW : BaseView, INDICATOR : BaseIndicator<VIEW>> : BaseFragment(), BaseView {
 
-    protected lateinit var inspector: INSPECTOR
+    protected lateinit var indicator: INDICATOR
         private set
 
-    abstract fun onCreateInspector(): INSPECTOR
+    abstract fun onCreateIndicator(): INDICATOR
 
     @Suppress("UNCHECKED_CAST")
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        inspector = onCreateInspector()
-        inspector.attachView(this as VIEW)
+        indicator = onCreateIndicator()
+        indicator.attachView(this as VIEW)
         return super.onCreateView(inflater, container, savedInstanceState)
     }
 
     override fun onDestroy() {
         super.onDestroy()
-        inspector.detachView()
+        indicator.detachView()
     }
 }
