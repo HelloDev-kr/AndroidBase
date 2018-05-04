@@ -27,7 +27,7 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation 'org.jetbrains.kotlin:kotlin-stdlib-jre7:1.2.30'
     implementation project(':android-base')
-//    implementation 'kr.hellodev.support:android-base:0.0.1'
+//    implementation 'kr.hellodev.support:android-base:0.0.5'
     implementation 'com.android.support:appcompat-v7:27.1.1'
     implementation 'com.android.support:design:27.1.1'
     testImplementation 'junit:junit:4.12'
