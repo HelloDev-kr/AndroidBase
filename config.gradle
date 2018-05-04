@@ -18,7 +18,7 @@ ext {
 
     maven = [
             groupId       : 'kr.hellodev.support',
-            artifactId    : "android-base",
+            artifactId    : project.name,
             license       : 'MIT',
             licenseUrl    : 'https://mit-license.org',
             developerId   : 'hellodev-kr',
