@@ -39,7 +39,7 @@ class PreferencesManager private constructor() {
                 StringObject(prefs)
             }
             is Boolean -> {
-                BooleanObjectn(prefs)
+                BooleanObject(prefs)
             }
             is Int -> {
                 IntObject(prefs)
@@ -68,7 +68,7 @@ class PreferencesManager private constructor() {
                 StringObject(prefs)
             }
             is Boolean -> {
-                BooleanObjectn(prefs)
+                BooleanObject(prefs)
             }
             is Int -> {
                 IntObject(prefs)
